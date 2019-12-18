@@ -13,7 +13,7 @@ console.log("Wow, a regular function call.", "How boring.");
 To this:
 
 ```js
-console.log[["This is much more exciting!", "I love square brackets!"]];
+consoleLog[["This is much more exciting!", "I love square brackets!"]];
 ```
 
 ## Usage
@@ -36,6 +36,10 @@ sayHelloButWithSquareBrackets[["David", "Bailey", 2]];
 ```
 
 Look in `demo/script.js` for more usage examples.
+
+## How does it work?
+
+It (ab)uses the recent Proxy API to treat property access as a function call, along with hijacking `Array.prototype.toString` (which gets called whenever using accessing an property using a non-primitive key) in order to handle function arguments.
 
 ## Why did you make this?
 
