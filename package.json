@@ -1,0 +1,14 @@
+{
+  "name": "square-bracketify",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "demo": "parcel demo/index.html"
+  },
+  "author": "David Bailey <davidbailey00@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
