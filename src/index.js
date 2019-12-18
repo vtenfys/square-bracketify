@@ -6,7 +6,7 @@ Array.prototype.toString = function() {
   return origArrayToString.call(this);
 };
 
-export default function squareBracketify(fn, context = this) {
+function squareBracketify(fn, context = this) {
   const handler = {
     get() {
       const args = storedArgs.pop(); // get last stringified array
@@ -17,3 +17,6 @@ export default function squareBracketify(fn, context = this) {
 
   return new Proxy({}, handler);
 }
+
+const squareBracketifySquared = squareBracketify(squareBracketify);
+export default squareBracketifySquared;
